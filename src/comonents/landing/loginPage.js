@@ -1,10 +1,25 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const [backendData, setBackendData] = useState([{}])
+
+  useEffect(()=>{
+    fetch('/api').then(
+      response => {
+        console.log(response);
+        response.json()
+      }
+    ).then(
+      data => {
+        console.log(data);
+        setBackendData(data)
+      }
+    )
+  }, [])
   
   const onFinish = (values) => {
     navigate('portal/profile');
@@ -18,6 +33,11 @@ const LoginPage = () => {
   return (
   <>
     <h1>Login Page</h1>
+    {/* {
+      backendData.users.map((user, i) =>(
+        <p key={i}>{user}</p>
+      ))
+    } */}
     <Form
       name="basic"
       labelCol={{

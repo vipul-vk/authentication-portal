@@ -1,10 +1,10 @@
 import './App.css';
-import LoginPage from './landing/LoginPage'
-import Portal from './landing/Portal'
+import LoginPage from './comonents/landing/loginPage'
+import Portal from './comonents/landing/Portal'
 import { Routes, Route } from 'react-router-dom';
 import { NotFound } from './comonents/NotFound';
 import { ProfileHome } from './comonents/ProfileHome';
-import { UpdateProfile } from './comonents/UpdateProfile';
+import  UpdateProfile  from './comonents/UpdateProfile';
 
 function App() {
   return (
